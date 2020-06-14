@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+$myColor:(
+    primaryColor : #022534,
+    textColor: #e4f5ff,
+    primary-light: lighten(#000000 , 40%),
+    primary-dark: darken(#000000 , 40%),
+    secondaryColor: #fff6bb,
+    whitecolor: #fff,
+    btnColor: #094f6e,
+    redColor: rgb(228, 24, 24),
+    greenColor: rgb(16, 214, 16),
+
+
+);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+$padding: 15px;
+$borders: 15px;
+$desktop: 840px;
+
+@mixin desktop{
+    @media screen and (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@function color($color-name){
+    @return map-get($myColor, $color-name)
+}
+body,
+html{
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: color(textColor);
+    #bg{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        clip-path: polygon(100% 0, 100% 82%, 45% 100%, 0 100%, 0 0);
+        background: color(primaryColor) ;
+
+        @include desktop{
+            clip-path: polygon(0 0, 75% 0, 55% 100%, 0 100%);
+        }
+    }
+    header a{
+        padding: $padding;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: color(textColor);
+        display: block;
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+        padding-top: 50px;
+    }
+    header a:hover{
+        background: color(textColor);
+        color: color(primaryColor);
+    }
+}
+main{
+
+    @include desktop{
+        display: grid;
+        grid-template-columns: 50% auto;
+        grid-template-areas: "primary card";
+    }
+    section#card{
+        background: color(whitecolor);
+        padding: 20px;
+        margin: 1em auto;
+        border-radius: $borders;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        width: 80%;
+
+        @include desktop{
+            grid-area: card;
+            height: fit-content;
+            align-self: center;
+            margin: 1em;
+        }
+
+        table{
+            background: #96c7d5;
+            color: color(btnColor);
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+        }
+        tbody{
+            background: color(btnColor);
+            color: color(whitecolor);
+            td{
+                padding: 10px;
+            }
+            tr td:last-child{
+                background: color(redColor);
+                color: color(textColor);
+            }
+        }
+        
+    }
+    section#primary{
+        color: color(whitecolor);
+        padding: $padding;
+        @include desktop{
+            grid-area: primary;
+            height: fit-content;
+            align-self: center;
+            margin: 1em;
+            text-align: center;
+        }
+        #list-form{
+            width: 100%;
+            display: block;
+
+            input{
+                width: 100%;
+                display: block;
+                padding: 8px;
+                background: color(btnColor);
+                color: color(whitecolor);
+            }
+            label{
+                width: 100%;
+                display: block;
+                padding: 10px;
+                color: color(primaryColor);
+                background: color(textColor);
+            }
+            div{
+                margin-bottom: 5px;
+            }
+        }
+        .successAlert{
+            background: color(greenColor);
+        }
+        .dangerAlert{
+            background: color(redColor);
+        }
+
+        h1{
+            font-size: 3em;
+            margin-top: 10px;
+            text-transform: uppercase;
+           
+    
+
+        }
+
+        p{
+            font-size: 1.4em;
+
+        }
+        button{
+            color: color(textColor);
+            border-radius: $borders;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin: 5px auto 0 auto;
+            padding: $padding;
+            background: color(btnColor);
+           
+            @include desktop{
+                width: 40%;
+            }
+        }
+        button:hover{
+            background: #2d7a9c;
+        }
+    }
+}

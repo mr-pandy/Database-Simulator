@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="/scaa.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+</head>
+<body>
+
+  <div id="bg"></div>
+    <header>
+      <a href="#">TenoTea</a>
+    </header>
+    <main>
+      
+
+      <section id="primary">
+        <h1>Your Personal Booking</h1>
+        <p>This will help know how many people are meeting up with the boss</p>
+        
+        <div id="alertMessages"></div>
+        <form id="list-form">
+          <!-- Name -->
+          <div>
+            <label for="name">Full Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter Your Full Name" aria-describedby="helpId">
+          </div>
+          <!-- Email Address -->
+          <div>
+            <label for="email">Email Address</label>
+          <input type="text" name="email" id="email" placeholder="*****@***.com" aria-describedby="helpId">
+          </div>
+
+          <!-- Phone Number -->
+          <div>
+            <label for="number">Email Address</label>
+            <input type="text" name="number" id="number" placeholder="eg. 090*****" aria-describedby="helpId">
+          </div>
+          
+            <button type="submit">Submit to not attlack curses from teno</button>
+        </form>
+      </section>
+
+      <section id="card">
+        <table class="">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email Address</th>
+              <th>Phone Number</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="table-list">
+            <tr>
+              
+          </tbody>
+        </table>
+      </section>
+    </main>
+  
+  
+  <script src="/app.js"></script>
+</body>
+</html>
